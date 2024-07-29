@@ -1,22 +1,28 @@
 ﻿void Main()
 {
-    int M = 5;
-    int N = 10;
+    System.Console.Write("Введите начальное значение M: ");
+    int M = Convert.ToInt32(Console.ReadLine());
 
-    Console.WriteLine($"Натуральные числа в промежутке от {M} до {N}: ");
-    PrintNumbersInRange(M, N);
+    System.Console.Write("Введите конечное значение N: ");
+    int N = Convert.ToInt32(Console.ReadLine());
+
+    if (M >= N)
+    {
+        System.Console.WriteLine("N должен быть больше M");
+    }
+    else
+    {
+        PrintNumbers(M, N);
+    }
 }
 
-static void PrintNumbersInRange(int M, int N)
+void PrintNumbers(int M, int N)
 {
-
     if (M > N)
-    {
         return;
-    }
 
-    Console.Write(M + " ");
-    PrintNumbersInRange(M + 1, N);
+    System.Console.WriteLine(M);
+    PrintNumbers(M + 1, N);
+
 }
 Main();
-
